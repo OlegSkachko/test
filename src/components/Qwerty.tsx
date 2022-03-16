@@ -1,11 +1,11 @@
 import React from 'react';
 
-const dsr = () => {
+const Qwerty = () => {
     return (
         <div>
-            jkjl,.mnbj
+            ljljkl
         </div>
     );
 };
 
-export default dsr;
+export default Qwerty;
