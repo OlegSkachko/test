@@ -1,0 +1,89 @@
+{
+  "name": "frontend-starter",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky install",
+    "start:tsc": "tsc -b -w --preserveWatchOutput",
+    "start": "concurrently \"yarn start:tsc\" \"razzle start\"",
+    "build": "tsc -b && razzle build --noninteractive",
+    "test:unit": "jest --env=jsdom --config ./jest/jest.config.js",
+    "lint": "ts-standard",
+    "lint:fix": "ts-standard --fix",
+    "csslint": "stylelint src/**/*.scss",
+    "csslint:fix": "stylelint --fix src/**/*.{css,less,sass,scss,sss}",
+    "start:prod": "NODE_ENV=production node build/server.js"
+  },
+  "engines": {
+    "node": ">=14.17"
+  },
+  "razzle_meta": {
+    "forceWebpack": true
+  },
+  "ts-standard": {
+    "project": "./tsconfig.json",
+    "ignore": [
+      "build",
+      "*.js",
+      "cache",
+      "src/**/*.test.tsx",
+      "node_modules",
+      "src/server.tsx",
+      "src/client.tsx",
+      "src/index.ts"
+    ]
+  },
+  "dependencies": {
+    "@garpix/base-api": "^1.2.1",
+    "@garpix/fetcher": "^4.0.0",
+    "@garpix/garpix-web-components": "^0.14.0",
+    "@garpix/garpix-web-components-react": "^0.14.0",
+    "@garpix/styles": "^1.1.0",
+    "@storeon/localstorage": "^1.4.0",
+    "axios": "^0.21.1",
+    "classnames": "^2.3.1",
+    "express": "^4.17.2",
+    "postcss": "^8.2.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet-async": "^1.2.3",
+    "react-router-dom": "^6.2.1",
+    "serialize-javascript": "^6.0.0",
+    "storeon": "^3.1.4",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^8.11.1",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.2",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-router-dom": "^5.3.2",
+    "@types/webpack-env": "^1.16.3",
+    "babel-jest": "^27.4.5",
+    "babel-preset-razzle": "4.2.13",
+    "concurrently": "^6.5.1",
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^4.5.2",
+    "husky": "^7.0.4",
+    "jest-css-modules-transform": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "razzle": "^4.2.13",
+    "razzle-dev-utils": "^4.2.13",
+    "razzle-plugin-scss": "^4.2.13",
+    "stylelint": "^14.2.0",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "ts-jest": "^26.4.2",
+    "ts-standard": "^11.0.0",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
+    "typescript": "^4.5.4",
+    "url": "^0.11.0",
+    "webpack": "^5.24.0",
+    "webpack-dev-server": "^4.7.2"
+  }
+}
